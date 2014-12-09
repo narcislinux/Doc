@@ -1,0 +1,26 @@
+راه اندازی rhc 
+
+rhc چی هست ؟
+یک ابزار و کلاینت کامند لاین هست که به وسیله ی اون بتونیم openshift را مدریت کنیم. 
+
+برای شروع به راه اندازیش  بسته های زیر باید نصب باشند:
+-git
+-openssh-client
+-ruby <1.8.7
+-rubygems
+
+بسته ای که من نصب کردم برای ruby ،بسته ی ruby-full بود . چون خیلی خرده ریز داشت.
+
+تست نصب ruby و git:
+$ ruby -e 'puts "Welcome to Ruby"'
+Welcome to Ruby
+$ git --version
+git version 1.7.11.1
+بعد از نصب نصب این بسته ها پکیج منیجر rubygems استفاده میکنیم تا rhc را نصب کنیم 
+sudo gem install rhc
+rhc setup
+
+
+منبع :
+https://github.com/openshift/rhc
+

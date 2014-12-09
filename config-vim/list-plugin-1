@@ -1,0 +1,11 @@
+How to turn Vim into a full-fledged IDE >http://xmodulo.com/turn-vim-full-fledged-ide.html
+1. SuperTab > https://github.com/ervandew/supertab
+2. Syntastic > https://github.com/scrooloose/syntastic
+3. Auto Pairs > https://github.com/jiangmiao/auto-pairs
+4. NERD Commenter > https://github.com/scrooloose/nerdcommenter
+5. Snipmate > https://github.com/garbas/vim-snipmate
+6. NERDTree > https://github.com/scrooloose/nerdtree
+7. MiniBufferExplorer > http://www.vim.org/scripts/script.php?script_id=159
+8. Tag List > http://www.vim.org/scripts/script.php?script_id=273
+9. undotree > https://github.com/mbbill/undotree
+10. gdbmgr > http://vim.sourceforge.net/scripts/script.php?script_id=4104

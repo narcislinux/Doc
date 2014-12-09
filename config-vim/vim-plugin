@@ -1,0 +1,17 @@
+
+
+
+اولا که مسیر های زیر را داریم 
+$ mkdir ~/.vim/
+$ mkdir ~/.vim/{autoload,bundle}
+$ cd ~/.vim/
+
+بعد Pathogen را راه اندازی میکنیم که دیگه پلاگین ها را بتونیم اوتوماتیک نصب کنیم . 
+(برنامه vim-pathogenرا اول نصب کردن چون ویکی vim پیشنهاد داده و گفته که خیلی پلاگین نصب کردن را راحتتر میکنه: 
+ادرس برنامه : https://github.com/tpope/vim-pathogen
+
+و در نهایت هم فایل ~/.vimrc را ادیت میکنمی تا برنامه pathogen  درست لود بشه 
+
+
+این لینک هم خوب بود که مطالعه بشه :
+http://stackoverflow.com/questions/9172802/setting-up-vim-for-python

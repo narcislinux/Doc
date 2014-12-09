@@ -1,0 +1,21 @@
+تنظیمات tinytiny rss :
+یکی از راه حل ها :
+d ~/src/openshift  
+rhc app create -a ttr -t php-5.3
+rhc cartridge -e add-mysql-5.1 -a ttr
+rhc cartridge -e add-phpmyadmin-3.4 -a ttr
+rhc cartridge -e add-cron-1.4 -a ttr
+(If you used the web interface to create the app, you’ll need to create a local copy of the app, so execute the following instead of what you see directly above.)
+
+cd ~/src/openshift
+rhc git-clone ttr
+منبع ۱ :https://blog-cmauch.rhcloud.com/setup-tiny-tiny-rss-on-openshift/
+
+یکی دیگه از راه حل ها :
+ rhc app create ttrss  php-5 postgresql-8 --from-code=https://github.com/openshift-quickstart/tiny_tiny_rss-openshift-quickstart.git
+
+
+
+منابع :
+https://blog-cmauch.rhcloud.com/setup-tiny-tiny-rss-on-openshift/
+https://github.com/fabianofranz/tiny_tiny_rss-openshift-quickstart

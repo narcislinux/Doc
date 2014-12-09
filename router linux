@@ -1,0 +1,6 @@
+aptitude install isc-dhcp-server
+gedit /etc/dhcp/dhcpd.conf 
+ gedit /etc/default/isc-dhcp-server 
+iptables -t nat -A POSTROUTING -o kvnet -j MASQUERADE
+/proc/sys/net/ipv4/
+

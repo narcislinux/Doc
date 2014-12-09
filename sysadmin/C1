@@ -1,0 +1,12 @@
+جلسه اول : permition 
+1- sticky Bit 
+2- Sgid
+3- Suid 
+
+پیدا کردن یک پرمیژن با دستور find:
+
+# find / -perm /u=s
+# find / -perm /g+s
+# find / -perm 1551
+# find /  -perm -1000
+
