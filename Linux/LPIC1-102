@@ -18,7 +18,7 @@ It’s possible to create multiple usernames that use the same UID or multiple g
 useradd is native binary compiled with the system. But, adduser is a perl script which uses useradd binary in back-end.
 default home configuration files (including subdirectories) are copied from /etc/skel
 
-convert Epoch time 
+#convert Epoch time 
 
 now: 
 
