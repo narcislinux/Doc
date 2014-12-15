@@ -4,6 +4,7 @@
 -اول این مشخصات را بعد از نصب git باید وارد کنیم :
 git config --global user.name "Your Name Here"
 git config --global user.email "your_email@example.com" 
+git config --global color.ui auto
 
 -میتونیم برای این که مدام یوزر و پسورد ازمون نپرسه این کار را هم انجام بدیم:
 git config --global credential.helper cache

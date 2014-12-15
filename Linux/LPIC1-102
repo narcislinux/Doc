@@ -1,1 +1,32 @@
 هر یوزر پیش فرض یک گروه  default or primary دارد این گروه دیفالت در فایل /etc/passwd ذخیره شده
+linux command for Group on linux:
+
+$chgrp  #for change group of file 
+$newgrp #for change defult group of user  
+$chown #change group of file on owner of file 
+
+group is for design a security system for some user ...
+linux reserve 100 first number for system use (0-99 user and group) 
+0 is the important number (root-user and group)
+
+
+Account numbering limits are set in the /etc/login
+on modern distribution UID_MIN and UID_MAX is 1000 and 60000, respectivey.
+
+Linux does not protect you from yourself!
+It’s possible to create multiple usernames that use the same UID or multiple group names that use the same GID.
+useradd is native binary compiled with the system. But, adduser is a perl script which uses useradd binary in back-end.
+default home configuration files (including subdirectories) are copied from /etc/skel
+
+convert Epoch time 
+
+now: 
+
+date +%s
+
+convert:
+
+date +%s -d"jan 1, 1980 00:00:01" ##Rplace -d with -ud to input on GMT/UTC time
+date -d @epoch_time ##Rplace -d with -ud to input on GMT/UTC time
+
+
