@@ -1,1 +1,133 @@
+##----------------User and Group on linux--------------------
+
 هر یوزر پیش فرض یک گروه  default or primary دارد این گروه دیفالت در فایل /etc/passwd ذخیره شده
+linux command for Group on linux:
+
+=> chgrp: for change group of file 
+=> newgrp: for change defult group of user  
+=> chown: change group of file on owner of file 
+
+
+
+group is for design a security system for some user ...
+linux reserve 100 first number for system use (0-99 user and group) 
+0 is the important number (root-user and group)
+
+
+Account numbering limits are set in the /etc/login
+on modern distribution UID_MIN and UID_MAX is 1000 and 60000, respectivey.
+
+Linux does not protect you from yourself!
+It’s possible to create multiple usernames that use the same UID or multiple group names that use the same GID.
+useradd is native binary compiled with the system. But, adduser is a perl script which uses useradd binary in back-end.
+default home configuration files (including subdirectories) are copied from /etc/skel
+
+=> usermod :
+-l parameter, which changes the user’s login name
+-L and -U  lock and unlock a user’s password 
+-d alone changes the user’s home directory (but it doesn’t move any files). with -m move the user’s files 
+
+
+##shadow style
+User name:Password:Last changed date:Minimum days:Maximum days:Warn days:Inactive days:Expire date:Supposedly reserved..
+
+##chage and passwd command-both of them change the /etc/shadow file 
+
+=> passwd:
+-l locks
+-u unlocks
+-d delete pass
+-S display information about the password for an account—whether it’s set and what type of encryption it uses.
+
+
+=> chage: 
+-l display information
+-m Minimum Time Between Password Changes
+-M Maximum Time Between Password Changes
+-d Last Password Change Date!!(maybe u like use it ;))-time format YYYY-MM-DD OR number of days since January 1, 1970
+-I Inactive Days- inactivedays parameter sets the number of days between password expiration and account disablement
+-E  Expiration Date-time format YYYY-MM-DD OR number of days since January 1, 1970
+-W Number of Warning Days
+
+EX: chage -d 0 user %force change pass at next  login
+
+##password encrypt:
+?? salt value??
+ $1 = MD5 hashing algorithm.
+ $2 =Blowfish Algorithm is in use.
+ $2a=eksblowfish Algorithm
+ $5 =SHA-256 Algorithm
+ $6 =SHA-512 Algorithm
+ $6$rounds=n% rounds can be varied for Blowfish and SHA-256/512
+
+##change hash algorithm ! 
+authconfig --passalgo=sha512 --update
+
+##Epoch time 
+
+now: 
+
+date +%s
+
+convert:
+
+date +%s -d"jan 1, 1980 00:00:01" ##Rplace -d with -ud to input on GMT/UTC time
+date -d @epoch_time ##Rplace -d with -ud to input on GMT/UTC time
+
+
+## /bin/false : can’t log in using a command shell
+
+=> userdel:
+-r delet users with home directory and mail spool file(other fiel should be delet  manualy)
+-f  force deletion of the account while a user is logged ....
+
+> groupadd:
+-g GID -o get reserve GID (u can have multiple GID)
+-r system group ID
+
+=> groupmod:
+-g 
+-n new group name
+
+! use -a with -G for usermod if u don't what dele user of other group!
+
+=> gpasswd:
+-a add user to group
+-d delete usere from group
+-R now be defult group (with newgrp command)
+-r remove password
+
+## id and groups -> check information
+
+=> groupdel 
+
+
+##----------------Environment Variables--------------------
+EX:
+	$ HOSTNAME=COMPUTER_NAME
+	$ export HOSTNAME
+    OR
+	$ export HOSTNAME=COMPUTER_NAME
+
+#env utility can be used to run a command under a modified environmen
+=> env
+EX: env EDITOR=vim xterm
+To see what environment variables are available to a specific process, look in /proc/${PID}/environ.
+
+##bash configuration files
+Global/Login file location :
+	/etc/profile and /etc/ profile.d 
+Global/Non-login file location:
+	/etc/bashrc or /etc/bash.bashrc
+User/login file location:
+	~/.bash_login, ~/.profile, or ~/.bash_profile 
+User/Non-login file location:
+	~/.bashrc
+
+
+##----------------log--------------------
+
+syslogd daemon handles messages from servers and other user-mode programs
+syslogd paired with a daemon called klogd
+
+
