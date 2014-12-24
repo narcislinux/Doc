@@ -1,0 +1,41 @@
+راه اندازی git و github 
+
+
+-اول این مشخصات را بعد از نصب git باید وارد کنیم :
+git config --global user.name "Your Name Here"
+git config --global user.email "your_email@example.com" 
+git config --global color.ui auto
+
+-میتونیم برای این که مدام یوزر و پسورد ازمون نپرسه این کار را هم انجام بدیم:
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600'
+
+-تو مسیری که میخوایم با git کار کنیم دستور git init را میزنیم . 
+-کامند های دیگه ای که باشون باید کارکنیم یکی git add .... هست و یکی هم git commit -m '...' 
+
+-برای فرستادن commit هامون به github باید اول git رو به github وصل کنیم:
+--دستورا برای https ایناست:
+git remote add origin https://github.com/username/Hello-World.git
+--برای ssh ایناست : 
+$ cd ~
+$ mkdir .ssh
+$ cd .ssh
+$ ssh-keygen -t rsa -C "you@yourmail.com"
+---بعد هم کلید پابلیک را تو مسیر .ssh میریزم تو بخش تنضیمات github. 
+---در اخر هم دستور زیر : 
+git remote add origin git@github.com:<username>/my_project.git
+-بعد از این که وصل شد دو تا دستور زیر را برای رد و بدل کردن کد ها داریم :
+git push origin master
+git pull origin master
+git push --all
+
+
+
+منابع:
+-https://help.github.com/articles/why-is-git-always-asking-for-my-password
+-http://nithinbekal.com/2010/installing-git-and-pushing-repo-to-github/
+-https://help.github.com/articles/set-up-git#password-caching
+-https://help.github.com/articles/create-a-repo
+-
+-
+
